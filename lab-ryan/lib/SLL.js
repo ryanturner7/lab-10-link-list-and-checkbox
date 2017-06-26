@@ -44,7 +44,19 @@ removeNode(node){
 }
 
 reverse(){
+  let current = this;
+  let previous = null;
 
+while(current){
+  let save = current.next;
+  current.next = previous;
+  previous = current;
+  current = save;
+}
+
+return previous;
+
+  }
 }
 try {
   console.log('testing SLL')
