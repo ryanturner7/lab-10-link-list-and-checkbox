@@ -34,34 +34,30 @@ module.exports = class SLL {
     return slow;
   }
 
-  removeNode(node){
-    if(this === null) return;
-
+  removeNode(value){
     let current = this;
-    while (current.next != null) {
-      if (current.next === node) {
-        current.next = current.next.next;
-        return;
-      }
+    while (current.next.value !== value) {
       current = current.next;
     }
-  }
-
-  reverse(){
-    let current = this;
-    let previous = null;
-
-    while(current){
-      let save = current.next;
-      current.next = previous;
-      previous = current;
-      current = save;
-    }
-
-    return previous;
-
+    current.next = current.next.next;
   }
 };
+
+//   reverse(){
+//     let current = this;
+//     let previous = null;
+//
+//     while(current){
+//       let save = current.next;
+//       current.next = previous;
+//       previous = current;
+//       current = save;
+//     }
+//
+//     return previous;
+//
+//   }
+// };
 // try {
 //   console.log('testing SLL');
 //

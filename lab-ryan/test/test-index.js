@@ -76,7 +76,6 @@ describe('removeNode', () => {
     let testNode4 = new SLL(4);
     testHead.appendNode(testNode1);
     testHead.appendNode(testNode2);
-    testHead.appendNode(testNode2);
     testHead.appendNode(testNode3);
     testHead.appendNode(testNode4);
     testHead.removeNode(2);
