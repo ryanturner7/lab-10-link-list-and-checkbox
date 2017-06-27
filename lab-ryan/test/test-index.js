@@ -51,7 +51,7 @@ describe('fromMiddle method', () => {
     testHead.appendNode(testNode2);
     testHead.appendNode(testNode3);
     testHead.appendNode(testNode4);
-    let middle = testHead.fromMiddle(testHead);
+    let middle = testHead.findMiddle(testHead);
     expect(middle.value).toEqual(2);
     done();
   });
