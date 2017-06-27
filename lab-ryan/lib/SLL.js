@@ -56,47 +56,12 @@ module.exports = class SLL {
     return previous;
 
   }
+
+  findNthNode(n){
+    let current = this;
+    for(let i=0; i<n; i++){
+      current = current.next;
+    }
+    return current;
+  }
 };
-// try {
-//   console.log('testing SLL');
-//
-//   let head = new SLL(4);
-//   console.assert(head.value === 4);
-//   console.assert(head.next === null);
-//
-//   head.appendNode(new SLL(87));
-//   head.appendNode(new SLL(43));
-//
-//   console.assert(head.value == 4);
-//   console.assert(head.next.value == 87);
-//   console.assert(head.next.next.value == 43);
-//   console.assert(head.next.next.next == null);
-//   console.dir(head, {depth: 100});
-//
-//   // how to prepend
-//   let tmp = new SLL(8);
-//   tmp.next = head;
-//   head = tmp;
-//
-//   // prepend again
-//   tmp = new SLL(0);
-//   tmp.next = head;
-//   head = tmp;
-//
-//   let sum = 0;
-//   head.forEach((node, list) => {
-//     console.assert(list === head);
-//     sum += node.value;
-//   });
-//
-//   console.assert(sum == 142);
-//
-//   // 0 ->  8 -> (4) -> 87 -> 43 -> null
-//   let middle = head.findMiddle();
-//   console.log('middle.value', middle.value);
-//   console.assert(middle.value === 4);
-//
-//   console.log('success');
-// } catch (err) {
-//   console.error('failed', err);
-// }
