@@ -36,28 +36,27 @@ module.exports = class SLL {
 
   removeNode(value){
     let current = this;
-    while (current.next.value !== value) {
+    while(current.next.value !== value){
       current = current.next;
     }
     current.next = current.next.next;
   }
-};
 
-//   reverse(){
-//     let current = this;
-//     let previous = null;
-//
-//     while(current){
-//       let save = current.next;
-//       current.next = previous;
-//       previous = current;
-//       current = save;
-//     }
-//
-//     return previous;
-//
-//   }
-// };
+  reverse(){
+    let current = this;
+    let previous = null;
+
+    while(current){
+      let save = current.next;
+      current.next = previous;
+      previous = current;
+      current = save;
+    }
+
+    return previous;
+
+  }
+};
 // try {
 //   console.log('testing SLL');
 //
